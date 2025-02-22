@@ -22,3 +22,12 @@ for(i in myzipfiles){
   # print(i)
   gunzip(i, remove = F)
 }
+
+# After creating temporary variables it is good idea to remove them from
+# environment to save memory
+
+rm(i) ## Use this to remove the varibles that are not required
+
+
+# Using walk function to unzip the files
+walk(.x = myzipfiles, .f = safely(gunzip), remove = F)
