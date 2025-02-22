@@ -16,3 +16,9 @@ myzipfiles <- list.files(path = 'Zip/',pattern = 'gz',full.names = T)
 #Vectors are not zero indexed like python, the indexes start form 1
 # Accessing the first path in myzipfiles
 myzipfiles[1]
+
+
+for(i in myzipfiles){
+  # print(i)
+  gunzip(i, remove = F)
+}
