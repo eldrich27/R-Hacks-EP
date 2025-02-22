@@ -31,3 +31,12 @@ rm(i) ## Use this to remove the varibles that are not required
 
 # Using walk function to unzip the files
 walk(.x = myzipfiles, .f = safely(gunzip), remove = F)
+
+
+# Removing the cs files with walk
+rmfiles <- list.files(path = 'Zip/', pattern = 'csv$',full.names = T)
+
+walk(.x = rmfiles, .f = file.remove)
+
+rm(myzipfiles)
+rm(rmfiles)
